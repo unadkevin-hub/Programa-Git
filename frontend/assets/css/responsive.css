@@ -1,0 +1,44 @@
+/* =========================================================
+   Mini Market Bamer - responsive.css
+   Puntos de corte: 1100px (tablet), 900px (menú oculto), 600px (celular)
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .venta { grid-template-columns: minmax(0, 1fr) 330px; }
+  .dos-columnas { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .menu { transform: translateX(-100%); }
+  body.menu-abierto .menu { transform: none; box-shadow: 0 0 40px rgba(0, 0, 0, .3); }
+  body.menu-abierto .menu-fondo { display: block; position: fixed; inset: 0; z-index: 25; background: rgba(17, 24, 39, .4); }
+  .contenido { margin-left: 0; }
+  .btn-menu { display: grid; }
+  .barra { padding: 0 16px; }
+  main { padding: 18px 16px 32px; }
+  .venta { grid-template-columns: minmax(0, 1fr); }
+  .carrito { position: static; }
+  .login { grid-template-columns: 1fr; }
+  .login-marca { padding: 28px 24px; }
+  .login-marca h1 { font-size: 26px; }
+  .login-marca .lema, .login-marca .logo { display: none; }
+}
+
+@media (max-width: 600px) {
+  .indicadores { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tarjeta { padding: 14px; }
+  .tarjeta-valor { font-size: 22px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .usuario div { display: none; }
+  .buscador { flex-basis: 100%; min-width: 0; }
+  .herramientas select.input { flex: 1 1 calc(50% - 5px); min-width: 0; }
+  .herramientas > .btn-primario { flex-basis: 100%; }
+  .herramientas .campo { flex: 1 1 140px; }
+  .herramientas .btn { flex: 1 1 auto; }
+  .seccion-cab .btn { flex: 1 1 auto; }
+  .detalle-cab { grid-template-columns: 1fr 1fr; }
+  .lista-productos { grid-template-columns: 1fr 1fr; }
+  .panel { padding: 16px; }
+  .toast { left: 16px; right: 16px; }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kevin Andrés Oliveros Canchila">
+  <meta name="description" content="Sistema de gestión de ventas e inventario - Mini Market Bamer">
+  <title>Reportes | Mini Market Bamer</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/componentes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-roles="admin" data-pagina="reportes">
+<div class="app">
+  <aside class="menu" id="menu" aria-label="Menú principal"></aside>
+  <div class="menu-fondo" id="menuFondo"></div>
+
+  <div class="contenido">
+    <header class="barra">
+      <button class="btn-menu" id="btnMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"></button>
+      <h1 id="tituloPagina">Reportes</h1>
+      <div class="usuario" id="usuario"></div>
+    </header>
+
+    <main id="principal">
+      <div class="pila">
+        <div class="herramientas" style="margin:0">
+          <div class="campo">
+            <label for="desde">Desde</label>
+            <input class="input" type="date" id="desde">
+          </div>
+          <div class="campo">
+            <label for="hasta">Hasta</label>
+            <input class="input" type="date" id="hasta">
+          </div>
+          <button class="btn" type="button" data-rango="0">Hoy</button>
+          <button class="btn" type="button" data-rango="6">Últimos 7 días</button>
+          <button class="btn" type="button" data-rango="13">Últimos 14 días</button>
+          <button class="btn btn-primario" type="button" id="btnImprimir" style="margin-left:auto">Imprimir reporte</button>
+        </div>
+
+        <p class="texto-suave" id="periodo"></p>
+
+        <section class="indicadores" aria-label="Totales del periodo">
+          <article class="tarjeta"><p class="tarjeta-titulo">Total vendido</p><strong class="tarjeta-valor" id="repTotal">$ 0</strong><small class="tarjeta-detalle" id="repGanancia"></small></article>
+          <article class="tarjeta"><p class="tarjeta-titulo">Número de ventas</p><strong class="tarjeta-valor" id="repNumero">0</strong><small class="tarjeta-detalle" id="repAnuladas"></small></article>
+          <article class="tarjeta"><p class="tarjeta-titulo">Ticket promedio</p><strong class="tarjeta-valor" id="repPromedio">$ 0</strong><small class="tarjeta-detalle">por venta</small></article>
+          <article class="tarjeta"><p class="tarjeta-titulo">Unidades vendidas</p><strong class="tarjeta-valor" id="repUnidades">0</strong><small class="tarjeta-detalle" id="repProductos"></small></article>
+        </section>
+
+        <section class="panel" aria-labelledby="tituloGrafico">
+          <div class="seccion-cab"><h2 id="tituloGrafico">Ventas por día</h2></div>
+          <div class="grafico"><canvas id="grafico" role="img" aria-label="Gráfico de barras con el total vendido por día"></canvas></div>
+        </section>
+
+        <div class="reporte-grid">
+          <section class="panel" aria-labelledby="tituloTop">
+            <div class="seccion-cab"><h2 id="tituloTop">Productos más vendidos</h2></div>
+            <div class="tabla-envoltura">
+              <table class="tabla">
+                <thead><tr><th>Producto</th><th class="derecha">Unidades</th><th class="derecha">Total</th><th><span class="solo-lector">Proporción</span></th></tr></thead>
+                <tbody id="tablaTop"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="tituloVendedores">
+            <div class="seccion-cab"><h2 id="tituloVendedores">Ventas por vendedor</h2></div>
+            <div class="tabla-envoltura">
+              <table class="tabla">
+                <thead><tr><th>Vendedor</th><th class="derecha">Ventas</th><th class="derecha">Total</th></tr></thead>
+                <tbody id="tablaVendedores"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel" aria-labelledby="tituloBajo">
+          <div class="seccion-cab">
+            <h2 id="tituloBajo">Productos para pedir al proveedor</h2>
+            <a class="btn btn-sm no-imprimir" href="inventario.html?estado=bajo">Ir al inventario</a>
+          </div>
+          <div class="tabla-envoltura">
+            <table class="tabla">
+              <thead><tr><th>Producto</th><th>Categoría</th><th class="derecha">Stock</th><th class="derecha">Mínimo</th><th>Estado</th></tr></thead>
+              <tbody id="tablaBajo"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="assets/js/validaciones.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/reportes.js"></script>
+</body>
+</html>

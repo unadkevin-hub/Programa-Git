@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kevin Andrés Oliveros Canchila">
+  <meta name="description" content="Sistema de gestión de ventas e inventario - Mini Market Bamer">
+  <title>Iniciar sesión | Mini Market Bamer</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/componentes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-pagina="login">
+<div class="login">
+  <section class="login-marca">
+    <span class="logo" aria-hidden="true">MB</span>
+    <h1>Mini Market Bamer</h1>
+    <p>Sistema de gestión de ventas e inventario</p>
+    <p class="lema">Controla tus ventas, productos y reportes en un solo lugar.</p>
+  </section>
+
+  <main class="login-form">
+    <div class="login-caja">
+      <h2>Iniciar sesión</h2>
+      <p class="texto-suave">Ingresa con tu usuario asignado</p>
+
+      <form id="formLogin" novalidate>
+        <div class="alerta error oculto" id="alertaLogin" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg><span></span></div>
+        <div class="campo">
+          <label for="usuario">Usuario</label>
+          <input class="input" type="text" id="usuario" name="usuario" placeholder="Ej: kevin.admin" autocomplete="username" autocapitalize="none">
+          <span class="msg-error"></span>
+        </div>
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input class="input" type="password" id="clave" name="clave" placeholder="••••••••" autocomplete="current-password">
+          <span class="msg-error"></span>
+        </div>
+        <button class="btn btn-primario btn-bloque" type="submit">Ingresar</button>
+        <button class="btn-enlace" type="button" id="btnOlvido">¿Olvidaste tu contraseña?</button>
+      </form>
+
+      <hr class="separador">
+      <button class="btn btn-bloque" type="button" id="btnDemo">Ingresar como vendedor (demo)</button>
+
+      <div class="demo">
+        <strong>Usuarios de prueba</strong><br>
+        Administrador: <code>kevin.admin</code> / <code>admin123</code><br>
+        Vendedor: <code>carlos.ventas</code> / <code>venta123</code><br>
+        <button class="btn-enlace" type="button" id="btnRestablecer">Restablecer datos de demostración</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="assets/js/validaciones.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

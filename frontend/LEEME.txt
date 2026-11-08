@@ -1,0 +1,41 @@
+Evidencia GA6-220501096-AA4-EV03 - Diseño front-end que cumpla con los requerimientos del proyecto
+Aprendiz: Kevin Andrés Oliveros Canchila - ADSO, ficha 3336091
+Proyecto: Sistema de Gestión de Ventas e Inventario para el Mini Market Bamer
+
+CÓMO ABRIRLO
+  Doble clic en index.html (funciona sin servidor, en Chrome, Edge o Firefox).
+
+USUARIOS DE PRUEBA
+  Administrador: kevin.admin / admin123   -> ve todos los módulos
+  Vendedor:      carlos.ventas / venta123 -> solo Registrar venta y Mis ventas
+
+PANTALLAS (según la estructura definida en la evidencia AA4-EV02)
+  index.html       Inicio de sesión con validación
+  admin.html       Panel principal: indicadores del día, últimas ventas y alerta de stock bajo
+  venta.html       Registrar venta: buscador (también con lector de código de barras + Enter),
+                   carrito, cálculo de cambio y comprobante
+  historial.html   Historial de ventas con filtros, paginación, detalle y anulación (admin)
+  inventario.html  Inventario con búsqueda, filtros por categoría y estado, editar y eliminar
+  producto.html    Formulario de nuevo / editar producto con validaciones
+  usuarios.html    Crear, editar, activar y desactivar usuarios
+  reportes.html    Totales por periodo, gráfico de ventas por día (canvas),
+                   más vendidos, ventas por vendedor y productos para pedir; se puede imprimir
+
+ARCHIVOS
+  assets/css/base.css         Variables de color, reset y tipografía
+  assets/css/componentes.css  Plantilla base y componentes reutilizables
+  assets/css/responsive.css   Media queries (1100 px, 900 px y 600 px)
+  assets/js/app.js            Datos de prueba, sesión, permisos por rol, menú y utilidades
+  assets/js/validaciones.js   Validación de formularios
+  assets/js/venta.js          Buscador, carrito y cobro
+  assets/js/historial.js      Consulta y anulación de ventas
+  assets/js/inventario.js     Inventario y formulario de producto
+  assets/js/usuarios.js       Gestión de usuarios
+  assets/js/reportes.js       Indicadores del panel y reportes
+  assets/img/logo.svg         Logo / favicon
+
+NOTAS
+  - Es el prototipo front-end: los datos se guardan en el navegador (localStorage).
+    En la fase de back-end se reemplazan por la base de datos.
+  - "Restablecer datos de demostración" (en el login) deja todo como al principio.
+  - La fuente Inter se carga de Google Fonts; sin internet se usa la fuente del sistema.

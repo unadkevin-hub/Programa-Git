@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kevin Andrés Oliveros Canchila">
+  <meta name="description" content="Sistema de gestión de ventas e inventario - Mini Market Bamer">
+  <title>Inventario | Mini Market Bamer</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/componentes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-roles="admin" data-pagina="inventario">
+<div class="app">
+  <aside class="menu" id="menu" aria-label="Menú principal"></aside>
+  <div class="menu-fondo" id="menuFondo"></div>
+
+  <div class="contenido">
+    <header class="barra">
+      <button class="btn-menu" id="btnMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"></button>
+      <h1 id="tituloPagina">Inventario</h1>
+      <div class="usuario" id="usuario"></div>
+    </header>
+
+    <main id="principal">
+      <section class="panel">
+        <div class="herramientas">
+          <div class="buscador">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <label for="buscar" class="solo-lector">Buscar producto</label>
+            <input class="input" type="search" id="buscar" placeholder="Buscar por nombre o código" autocomplete="off">
+          </div>
+          <label for="filtroCategoria" class="solo-lector">Categoría</label>
+          <select class="input" id="filtroCategoria"><option value="">Todas las categorías</option></select>
+          <label for="filtroEstado" class="solo-lector">Estado</label>
+          <select class="input" id="filtroEstado">
+            <option value="">Todos los estados</option>
+            <option value="ok">Disponible</option>
+            <option value="bajo">Bajo stock y agotados</option>
+            <option value="agotado">Solo agotados</option>
+          </select>
+          <a class="btn btn-primario" href="producto.html">+ Nuevo producto</a>
+        </div>
+
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <caption id="resumenInventario"></caption>
+            <thead>
+              <tr><th>Código</th><th>Producto</th><th>Categoría</th><th class="derecha">Precio</th><th class="derecha">Stock</th><th>Estado</th><th class="derecha"><span class="solo-lector">Acciones</span></th></tr>
+            </thead>
+            <tbody id="tablaInventario"></tbody>
+          </table>
+        </div>
+        <nav class="paginacion" id="paginacion" aria-label="Paginación"></nav>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="assets/js/validaciones.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/inventario.js"></script>
+</body>
+</html>

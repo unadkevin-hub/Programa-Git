@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kevin Andrés Oliveros Canchila">
+  <meta name="description" content="Sistema de gestión de ventas e inventario - Mini Market Bamer">
+  <title>Panel principal | Mini Market Bamer</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/componentes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-roles="admin" data-pagina="panel">
+<div class="app">
+  <aside class="menu" id="menu" aria-label="Menú principal"></aside>
+  <div class="menu-fondo" id="menuFondo"></div>
+
+  <div class="contenido">
+    <header class="barra">
+      <button class="btn-menu" id="btnMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"></button>
+      <h1 id="tituloPagina">Panel principal</h1>
+      <div class="usuario" id="usuario"></div>
+    </header>
+
+    <main id="principal">
+      <div class="pila">
+        <section class="indicadores" aria-label="Indicadores del día">
+          <article class="tarjeta">
+            <p class="tarjeta-titulo">Ventas del día</p>
+            <strong class="tarjeta-valor" id="indVentas">$ 0</strong>
+            <small class="tarjeta-detalle" id="indVentasDet"></small>
+          </article>
+          <article class="tarjeta">
+            <p class="tarjeta-titulo">Productos en stock</p>
+            <strong class="tarjeta-valor" id="indStock">0</strong>
+            <small class="tarjeta-detalle" id="indStockDet"></small>
+          </article>
+          <article class="tarjeta aviso">
+            <p class="tarjeta-titulo">Por agotarse</p>
+            <strong class="tarjeta-valor" id="indAgotar">0</strong>
+            <small class="tarjeta-detalle"><a href="inventario.html?estado=bajo">Revisar inventario</a></small>
+          </article>
+          <article class="tarjeta">
+            <p class="tarjeta-titulo">Usuarios activos</p>
+            <strong class="tarjeta-valor" id="indUsuarios">0</strong>
+            <small class="tarjeta-detalle" id="indUsuariosDet"></small>
+          </article>
+        </section>
+
+        <section class="panel" aria-labelledby="tituloUltimas">
+          <div class="seccion-cab">
+            <h2 id="tituloUltimas">Últimas ventas</h2>
+            <a class="btn btn-primario btn-sm" href="venta.html">+ Nueva venta</a>
+            <a class="btn btn-sm" href="historial.html">Ver historial</a>
+          </div>
+          <div class="tabla-envoltura">
+            <table class="tabla">
+              <thead>
+                <tr><th>N° venta</th><th>Fecha</th><th>Vendedor</th><th class="derecha">Productos</th><th class="derecha">Total</th></tr>
+              </thead>
+              <tbody id="tablaUltimas"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="alerta oculto" id="alertaStock" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg><p id="alertaStockTexto"></p></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="assets/js/validaciones.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/reportes.js"></script>
+</body>
+</html>

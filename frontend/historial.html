@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kevin Andrés Oliveros Canchila">
+  <meta name="description" content="Sistema de gestión de ventas e inventario - Mini Market Bamer">
+  <title>Historial de ventas | Mini Market Bamer</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/componentes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-roles="admin vendedor" data-pagina="historial">
+<div class="app">
+  <aside class="menu" id="menu" aria-label="Menú principal"></aside>
+  <div class="menu-fondo" id="menuFondo"></div>
+
+  <div class="contenido">
+    <header class="barra">
+      <button class="btn-menu" id="btnMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"></button>
+      <h1 id="tituloPagina">Historial de ventas</h1>
+      <div class="usuario" id="usuario"></div>
+    </header>
+
+    <main id="principal">
+      <section class="panel">
+        <div class="herramientas">
+          <div class="campo">
+            <label for="desde">Desde</label>
+            <input class="input" type="date" id="desde">
+          </div>
+          <div class="campo">
+            <label for="hasta">Hasta</label>
+            <input class="input" type="date" id="hasta">
+          </div>
+          <div class="campo" id="campoVendedor">
+            <label for="filtroVendedor">Vendedor</label>
+            <select class="input" id="filtroVendedor"><option value="">Todos</option></select>
+          </div>
+          <div class="campo">
+            <label for="filtroEstado">Estado</label>
+            <select class="input" id="filtroEstado">
+              <option value="">Todas</option>
+              <option value="pagada">Pagadas</option>
+              <option value="anulada">Anuladas</option>
+            </select>
+          </div>
+          <button class="btn" type="button" id="btnLimpiar">Quitar filtros</button>
+        </div>
+
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <caption id="resumenHistorial"></caption>
+            <thead>
+              <tr><th>N° venta</th><th>Fecha</th><th>Vendedor</th><th class="derecha">Productos</th><th class="derecha">Total</th><th>Estado</th><th class="derecha"><span class="solo-lector">Acciones</span></th></tr>
+            </thead>
+            <tbody id="tablaHistorial"></tbody>
+            <tfoot>
+              <tr><td colspan="4">Total pagado en el periodo</td><td class="derecha" id="totalHistorial">$ 0</td><td colspan="2"></td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <nav class="paginacion" id="paginacion" aria-label="Paginación"></nav>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="assets/js/validaciones.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/historial.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# .gitignore - Mini Market Bamer
+target/
+.idea/
+.vscode/
+node_modules/
+*.log
+.env
+application-local.properties

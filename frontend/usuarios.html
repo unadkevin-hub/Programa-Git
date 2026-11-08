@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kevin Andrés Oliveros Canchila">
+  <meta name="description" content="Sistema de gestión de ventas e inventario - Mini Market Bamer">
+  <title>Usuarios | Mini Market Bamer</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/componentes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-roles="admin" data-pagina="usuarios">
+<div class="app">
+  <aside class="menu" id="menu" aria-label="Menú principal"></aside>
+  <div class="menu-fondo" id="menuFondo"></div>
+
+  <div class="contenido">
+    <header class="barra">
+      <button class="btn-menu" id="btnMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"></button>
+      <h1 id="tituloPagina">Usuarios</h1>
+      <div class="usuario" id="usuario"></div>
+    </header>
+
+    <main id="principal">
+      <div class="dos-columnas">
+        <section class="panel" aria-labelledby="tituloLista">
+          <div class="seccion-cab"><h2 id="tituloLista">Usuarios del sistema</h2></div>
+          <div class="tabla-envoltura">
+            <table class="tabla">
+              <thead>
+                <tr><th>Nombre</th><th>Usuario</th><th>Rol</th><th>Estado</th><th class="derecha"><span class="solo-lector">Acciones</span></th></tr>
+              </thead>
+              <tbody id="tablaUsuarios"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="tituloForm">
+          <div class="seccion-cab"><h2 id="tituloForm">Nuevo usuario</h2></div>
+          <form id="formUsuario" novalidate>
+            <div class="form-grid">
+              <div class="campo">
+                <label for="nombre">Nombre completo *</label>
+                <input class="input" type="text" id="nombre" maxlength="50" autocomplete="off">
+                <span class="msg-error"></span>
+              </div>
+              <div class="campo">
+                <label for="usuario">Usuario *</label>
+                <input class="input" type="text" id="usuario" maxlength="30" placeholder="Ej: ana.ventas" autocapitalize="none" autocomplete="off">
+                <span class="msg-error"></span>
+              </div>
+              <div class="campo">
+                <label for="clave">Contraseña *</label>
+                <input class="input" type="password" id="clave" maxlength="30" autocomplete="new-password">
+                <span class="msg-error"></span>
+                <span class="ayuda" id="ayudaClave">Mínimo 6 caracteres.</span>
+              </div>
+              <fieldset class="campo" style="border:0;padding:0;margin:0">
+                <legend class="etiqueta" style="padding:0">Rol *</legend>
+                <div class="opciones">
+                  <label><input type="radio" name="rol" value="vendedor" checked> Vendedor</label>
+                  <label><input type="radio" name="rol" value="admin"> Administrador</label>
+                </div>
+              </fieldset>
+              <div class="opciones">
+                <label><input type="checkbox" id="activo" checked> Usuario activo</label>
+              </div>
+            </div>
+            <div class="acciones" style="margin-top:20px">
+              <button class="btn" type="reset" id="btnCancelar">Cancelar</button>
+              <button class="btn btn-primario" type="submit" id="btnGuardar">Crear usuario</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="assets/js/validaciones.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/usuarios.js"></script>
+</body>
+</html>
